@@ -40,5 +40,5 @@ addBot(
   })
 );
 ```
-Inside the addBot() function you can create a bot with customized behaviour aswell as giving it a name and a google meet-code
+Inside the addBot() function you can create a bot with customized behaviour aswell as giving it a name and a google meet-code. Remember to set the second argument in the createBot() function to false.
 
