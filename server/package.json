@@ -4,6 +4,7 @@
   "main": "src/server/index.js",
 
   "scripts": {
+    
     "start": "node backend/Bot/SetupBots.js"
   },
   "keywords": [],
