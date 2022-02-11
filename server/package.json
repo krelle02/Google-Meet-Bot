@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "src/server/index.js",
   "scripts": {
+    
     "start": "node backend/Bot/SetupBots.js"
   },
   "keywords": [],
