@@ -6,30 +6,12 @@ puppeteer.use(StealthPlugin());
 require("dotenv").config();
 
 function MeetBot(botName, lectio, code) {
-  const URL = "https://www.lectio.dk/lectio/243/forside.aspx";
-  const formDataLectio = {
-    time: "0",
-    __EVENTTARGET: "m$Content$submitbtn2",
-    __EVENTARGUMENT: "",
-    __SCROLLPOSITION: "",
-    __VIEWSTATEX:
-      "0gAAAGlpZQotNDQ2NjMxODMxaWwCawCBbAJoaWRsBGhpZGwCZw1pbAJrAWUZL2xlY3Rpby9pbWcvZmF2aWNvbjU3LnBuZ2RnAmlsAmsCZQNvZmZsBIFpZGwCgWlkbAKBaWRsAmhpamRqbgFlBzIwMjEvMjJuAWUEMjAyMX4BcWwBaGRnA2lkbAJnBWlkbAKBaWRsAmcJaWRsBIFpbAJrA2UWTWFyc2VsaXNib3JnIEd5bW5hc2l1bWRnB2lkbAKBaWRsAoFpamlsAmsEcGRkZGRkBQAAABNWYWxpZGF0ZVJlcXVlc3RNb2RlBGhyZWYMYXV0b2NvbXBsZXRlCWlubmVyaHRtbAdDaGVja2VkAOZz40kgbAmPIadiKko+2OJYHl36",
-    __VIEWSTATEY_KEY: "",
-    __VIEWSTATE: "",
-    __EVENTVALIDATION:
-      "vTZsk1DvtixDW/7WMSK2msXLzYwB/NtpV0Nzk3Juyq5xE7ekChGuXQcvSNmnXMg+7vLGlWjhY2Z39sEoIKX/veCIIO5b+MFkGiomdr2mSc2K8yRKNg7Rjrzh0zCCvai/q5zj42PtFqOLNjm/iDNbBXX1gEBl9CMbkkIhOYyWYevyZqoO9vSlJknPvNHtwMsT7IfJURZetkGfwmToVTb3Tk/OrXJWpNbubby4TzNFScg=",
-    m$Content$username: process.env.LECTIO_USR,
-    m$Content$password: process.env.LECTIO_PSW,
-    masterfootervalue: "X1!ÆØÅ",
-    LectioPostbackId: "",
-  };
-
   const link = "https://apps.google.com/meet/";
 
   this.name = botName;
 
   this.getCode = () => {
-    return lectio ? getMeetLink(URL, formDataLectio) : code;
+    return lectio ? getMeetLink() : code;
   };
 
   this.launchMeet = async function () {

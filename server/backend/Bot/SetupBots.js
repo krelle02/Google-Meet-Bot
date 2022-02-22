@@ -55,16 +55,8 @@ function RUN(initializedBots) {
   }
 }
 
-/*addBot(
-  createBot("TestBot1", false, "njc-wzcv-rba", {
-    LaunchMeet: { bool: true },
-    GetMeetData: { bool: true },
-    //come back to this method later
-    TypeInChat: { bool: false, text: "" },
-  })
-);*/
 addBot(
-  createBot("Testvbot", false, "txq-strm-rvr", {
+  createBot("Testbot", true, "txq-strm-rvr", {
     LaunchMeet: { bool: true },
     GetMeetData: { bool: true },
     //come back to this method later

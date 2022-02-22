@@ -1,29 +1,27 @@
-
-import Card from "./Components/CollectionCard"
-import {React, useRef}  from "react"
-
+import { React, useState } from "react";
+import Card from "./Components/CollectionCard";
+import AddCard from "./Components/AddCard";
 
 export default function Collections() {
- const addCard = useRef("Add")
+  const [CollectionCards, setCollectionCards] = useState(["somth", "sp"]);
+
   return (
-    <div className="relative top-14 left-[13vw] w-[87vw] h-[92vh] flex justify-center ">
+    <div className="relative top-14 left-[13vw] flex h-[92vh] w-[87vw] justify-center ">
+      <div className=" h-fit mt-24 w-11/12 rounded-xl bg-gray-200 shadow-xl">
+        <nav className="bg-orange-500 flex h-10 items-center  rounded-t-xl">
+          <h3 className="ml-10 text-xl text-white">Collections</h3>
+        </nav>
 
-        <div className=" mt-24 w-11/12 bg-gray-200 shadow-xl h-fit rounded-xl">
-
-            <nav className="flex items-center h-10 bg-orange-500  rounded-t-xl">
-                <h3 className="ml-10 text-white text-xl">Collections</h3>
-            </nav>
-
-            <div className=" auto-rows-[15rem] grid grid-cols-[repeat(3,minmax(20rem,1fr))] gap-10 p-10">
-               <Card />
-                
-               <div className=" flex items-center justify-center rounded-md bg-white shadow-xl ">
-               Add
-               </div>
-               
-            </div>       
-        </div>     
+        <div className=" grid auto-rows-[15rem] grid-cols-[repeat(auto-fit,minmax(15rem,0.5fr))] gap-10 p-10">
+          {CollectionCards.map((card) => (
+            <Card />
+          ))}
+          <AddCard
+            setCollectionCards={setCollectionCards}
+            CollectionCards={CollectionCards}
+          />
+        </div>
+      </div>
     </div>
   );
 }
-
