@@ -152,7 +152,7 @@ function MeetBot(botName, lectio, code) {
     },
   });
   this.typeInChat = async () => {
-    //...
+    //..
   };
   //allow acces to function with property notation
   Object.defineProperty(this, "TypeInChat", {

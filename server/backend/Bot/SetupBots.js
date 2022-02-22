@@ -56,7 +56,7 @@ function RUN(initializedBots) {
 }
 
 addBot(
-  createBot("Testbot", true, "txq-strm-rvr", {
+  createBot("Testbot", false, "rwd-gcuz-prp", {
     LaunchMeet: { bool: true },
     GetMeetData: { bool: true },
     //come back to this method later
