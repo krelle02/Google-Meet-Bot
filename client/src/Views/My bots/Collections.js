@@ -14,7 +14,7 @@ export default function Collections() {
 
         <div className=" grid auto-rows-[15rem] grid-cols-[repeat(auto-fit,minmax(15rem,0.5fr))] gap-10 p-10">
           {CollectionCards.map((card) => (
-            <Card />
+            <Card title={card.title} />
           ))}
           <AddCard
             setCollectionCards={setCollectionCards}
