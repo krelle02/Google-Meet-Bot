@@ -6,24 +6,23 @@ const AddCard = (props) => {
   const formStateHandler = () => {
     setFormState(!formState);
   };
-  if (formState)
-    return (
-      <Form
-        CollectionCards={props.CollectionCards}
-        addCollection={props.setCollectionCards}
-        setFormState={setFormState}
-        formState={formState}
-      />
-    );
-  else
-    return (
-      <div
-        onClick={formStateHandler}
-        className=" flex items-center justify-center rounded-md bg-white shadow-xl "
-      >
-        Add
-      </div>
-    );
+
+  return (
+    <div className=" flex items-start justify-center rounded-md bg-white shadow-xl ">
+      {formState ? (
+        <Form
+          CollectionCards={props.CollectionCards}
+          addCollection={props.setCollectionCards}
+          setFormState={setFormState}
+          formState={formState}
+        />
+      ) : (
+        <div className="self-center" onClick={formStateHandler}>
+          Add
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default AddCard;
