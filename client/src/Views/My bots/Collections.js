@@ -1,6 +1,4 @@
 import { React, useState } from "react";
-import Card from "./Components/CollectionCard";
-import AddCard from "./Components/AddCard";
 import CollectionsList from "./Components/CollectionsList";
 
 export default function Collections() {

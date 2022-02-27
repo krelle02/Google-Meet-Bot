@@ -9,7 +9,7 @@ function MeetBot(botName, lectio, code) {
   const link = "https://apps.google.com/meet/";
 
   this.name = botName;
-
+  
   this.getCode = () => {
     return lectio ? getMeetLink() : code;
   };
