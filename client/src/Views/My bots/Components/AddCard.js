@@ -8,11 +8,11 @@ const AddCard = (props) => {
   };
 
   return (
-    <div className=" flex items-start justify-center rounded-md bg-white shadow-xl ">
+    <div className=" flex flex-col items-center justify-around  rounded-md bg-white shadow-xl  ">
       {formState ? (
         <Form
           CollectionCards={props.CollectionCards}
-          addCollection={props.setCollectionCards}
+          setCollectionCards={props.setCollectionCards}
           setFormState={setFormState}
           formState={formState}
         />

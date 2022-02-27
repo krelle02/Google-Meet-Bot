@@ -10,7 +10,7 @@ export default function Collections() {
         <nav className="bg-orange-500 flex h-10 items-center  rounded-t-xl">
           <h3 className="ml-10 text-xl text-white">Collections</h3>
         </nav>
-        
+
         <CollectionsList />
       </div>
     </div>
