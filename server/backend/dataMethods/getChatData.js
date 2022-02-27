@@ -43,8 +43,9 @@ async function scrapeMeetData(page,meetCode) {
 
 const chatObserver = require("./browser/chatObs");
 
-async function getChatData(page) {
-  await chatObserver(page);
+async function getChatData(meetData) {
+  await chatObserver(meetData.page);
+  setInterval(() => console.log(meetData.messages), 1000);
 }
 
 module.exports = {

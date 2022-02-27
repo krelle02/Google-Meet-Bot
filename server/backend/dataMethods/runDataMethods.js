@@ -8,7 +8,7 @@ async function runDataMethods(bot) {
 
   await exposePage(meetData);
   await bot.openChat();
-  await getChatData(meetData.page);
+  await getChatData(meetData);
   await bot.openVoice();
   await getSpeakingTime(meetData.page);
 }

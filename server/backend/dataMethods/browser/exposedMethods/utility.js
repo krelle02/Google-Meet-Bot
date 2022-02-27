@@ -37,7 +37,7 @@ const addText = (meetData, page) =>
 const getKey = (page) =>
   page.exposeFunction("getKey", (html) => {
     const $ = cheerio.load(html);
-    const key = $("span.ZjFb7c").text();
+    const key = $("span.zWGUib").text().trim();
     return key;
   });
 

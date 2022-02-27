@@ -6,11 +6,13 @@ const voiceObserver = async (page) => {
     async function getUser(mutation, bool) {
       //backtracks through the DOM to get the target
       let target = mutation.target;
-      console.log(target);
-      while (!target.classList.contains("KV1GEc")) {
+      //console.dir(target.classList);
+      while (!target.classList.contains("cxdMu")) {
         target = target.parentElement;
       }
-      const key = await getKey(target.innerHTML);
+      target = target.getElementsByClassName("zWGUib")[0];
+      const key = target.innerText.trim();
+      console.log(key);
       await updateMember(key, bool);
     }
 
@@ -25,12 +27,10 @@ const voiceObserver = async (page) => {
             await addMember();
             const box = mutation.addedNodes[0];
             const key = await getKey(box.innerHTML);
-
             //gets the span element which is the parent node to the node that mutates when member speaks
             const targetNode =
               mutation.addedNodes[0].lastChild.firstChild.firstChild.firstChild
                 .firstChild.firstChild.lastChild; //.firstChild.firstchild is the actual node
-
             //creates a new MutationObserver for the added member - This approach only works when the meet has not been created by the account the bot is using
             observers[key] = new MutationObserver(async (mutations) => {
               for (let mutation of mutations) {

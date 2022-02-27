@@ -34,7 +34,7 @@ const addMember = (meetData, meetCode, page) =>
     const data = await page.content();
     const $ = cheerio.load(data);
     const box = $(".GvcuGe").children().last();
-    const key = $("span.ZjFb7c", box).text();
+    const key = $("span.zWGUib", box).text();
 
     meetData.members[key] = {
       meet: meetCode,
