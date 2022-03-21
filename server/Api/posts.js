@@ -22,6 +22,7 @@ router.post("/create", async (req, res) => {
   const Timer = BotAPI.setTimer(time);
   await BotAPI.runBot(initBot, Timer);
   console.log("bot has been created");
+  res.send("bot has beenn created")
 });
 
 module.exports = router;
