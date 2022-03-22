@@ -1,8 +1,19 @@
 
 export default function CollectionCard(props) {
 
-  const onClickHandler = () => {
-    console.log(`switch to view collection with id of ${props.id}`)    
+  const onClickHandler =  async () => {
+    const reponse = await fetch("/posts/create", {
+      method: "POST",
+      body: JSON.stringify({
+          name: props.title,
+          code: "gie-nfqq-jnv",
+          time: 5000,
+      }),
+      headers: {
+          "Content-type": "application/json; charset=UTF-8"
+      }
+  })
+    window.alert(`Your bot has been created with: ${reponse}`)
   }
 
   return (
