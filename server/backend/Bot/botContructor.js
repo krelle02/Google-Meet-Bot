@@ -7,9 +7,17 @@ require("dotenv").config();
 
 function MeetBot(botName, lectio, code) {
   const link = "https://apps.google.com/meet/";
-
+  const actions = {
+    LaunchMeet: { bool: false },
+    GetMeetData: { bool: false },
+    TypeInChat: { bool: false, text: "" },
+    //setter for the actions to be modified
+    set setActions(value) {
+      this.actions = value;
+    },
+  };
   this.name = botName;
-  
+
   this.getCode = () => {
     return lectio ? getMeetLink() : code;
   };
@@ -160,16 +168,6 @@ function MeetBot(botName, lectio, code) {
       return this.typeInChat();
     },
   });
-
-  const actions = {
-    LaunchMeet: { bool: false },
-    GetMeetData: { bool: false },
-    TypeInChat: { bool: false, text: "" },
-    //setter for the actions to be modified
-    set setActions(value) {
-      this.actions = value;
-    },
-  };
 }
 
 module.exports = {

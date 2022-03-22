@@ -31,17 +31,18 @@ class BotAPI {
   static async runBot(Bot, Timer) {
     // some error handling
     await Timer;
-      for (let act in Bot.actions) {
-        if (Bot.actions[act].bool) {
-          try {
-            await Bot[act];
-          } catch (error) {
-              console.log("the bot closed because it found an error: " + error.message);
-              await Bot.browser.close();
-          }
+    for (let act in Bot.actions) {
+      if (Bot.actions[act].bool) {
+        try {
+          await Bot[act];
+        } catch (error) {
+          console.log(
+            "the bot closed because it found an error: " + error.message
+          );
+          await Bot.browser.close();
         }
       }
-    
+    }
   }
 }
 

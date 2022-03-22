@@ -20,9 +20,13 @@ router.post("/create", async (req, res) => {
   const bot = BotAPI.createBot(name, false, code, actions);
   const initBot = BotAPI.initBot(bot);
   const Timer = BotAPI.setTimer(time);
-  await BotAPI.runBot(initBot, Timer);
-  console.log("bot has been created");
-  res.send("bot has beenn created")
+  try {
+    await BotAPI.runBot(initBot, Timer);
+    console.log("bot has been created");
+    res.send("bot has beenn created");
+  } catch (error) {
+    throw new Error(error.message);
+  }
 });
 
 module.exports = router;
