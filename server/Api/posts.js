@@ -25,6 +25,7 @@ router.post("/create", async (req, res) => {
     console.log("bot has been created");
     res.send("bot has beenn created");
   } catch (error) {
+    res.send("The bot found an error");
     throw new Error(error.message);
   }
 });
