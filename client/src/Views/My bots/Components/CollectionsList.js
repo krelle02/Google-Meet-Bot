@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import Card from "./CollectionCard";
 import AddCard from "./AddCard";
 
-export default function CollectionsList() {
+export default function BotsList() {
   const [CollectionCards, setCollectionCards] = useState([]);
 
   return (

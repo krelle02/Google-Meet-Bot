@@ -1,4 +1,4 @@
-import react, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const Form = (props) => {
@@ -55,7 +55,7 @@ const Form = (props) => {
         ref={titleInputRef}
         type="text"
         required
-        placeholder="Name for collections"
+        placeholder="Name for bot"
       />
       {preview ? (
         <img className="h-auto w-4/5" src={preview}></img>
@@ -72,7 +72,7 @@ const Form = (props) => {
         </>
       )}
       <button type="submit">
-        <i>Create Collection</i>
+        <i>Create Bot</i>
       </button>
     </form>
   );
