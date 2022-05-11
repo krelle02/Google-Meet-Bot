@@ -18,12 +18,12 @@ router.post("/create", async (req, res) => {
   };
 
   const bot = BotAPI.createBot(name, false, code, actions);
-  const initBot = BotAPI.initBot(bot);
+  const initializedBot = BotAPI.initBot(bot);
   const Timer = BotAPI.setTimer(time);
   try {
-    await BotAPI.runBot(initBot, Timer);
     console.log("bot has been created");
     res.send("bot has beenn created");
+    await BotAPI.runBot(initializedBot, Timer);
   } catch (error) {
     res.send("The bot found an error");
     throw new Error(error.message);
