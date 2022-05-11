@@ -21,8 +21,8 @@ const Form = (props) => {
 
   const addCollectionHandler = (e) => {
     e.preventDefault();
-    props.setCollectionCards([
-      ...props.CollectionCards,
+    props.setBotCards([
+      ...props.BotCards,
       {
         title: titleInputRef.current.value.trim(),
         img: preview,
@@ -30,7 +30,7 @@ const Form = (props) => {
       },
     ]);
     props.setFormState(!props.formState);
-    console.log(props.CollectionCards);
+    console.log(props.BotCards);
   };
 
   const uploadFileHandler = (e) => {

@@ -11,8 +11,8 @@ const AddCard = (props) => {
     <div className=" flex flex-col items-center justify-around  rounded-md bg-white shadow-xl  ">
       {formState ? (
         <Form
-          CollectionCards={props.CollectionCards}
-          setCollectionCards={props.setCollectionCards}
+          BotCards={props.BotCards}
+          setBotCards={props.setBotCards}
           setFormState={setFormState}
           formState={formState}
         />
