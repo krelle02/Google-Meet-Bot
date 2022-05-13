@@ -1,13 +1,13 @@
 import "./App.css";
 import Nav from "./Views/Components/Nav";
 import Dashboard from "./Views/Components/Dashboard";
-import Collections from "./Views/My bots/Collections";
+import MyBots from "./Views/My bots/MyBots";
 function App() {
   return (
     <div>
       <Nav />
       <Dashboard />
-      <Collections />
+      <MyBots />
     </div>
   );
 }

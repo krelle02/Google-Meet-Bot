@@ -82,7 +82,7 @@ function MeetBot(botName, lectio, code) {
     await this.page.waitForNavigation();
 
     //enter meetcode
-    let enterCodeSelector = "#i3";
+    let enterCodeSelector = "#i4";
     await this.page.waitForSelector(enterCodeSelector, {
       visible: true,
       timeout: 3000,
