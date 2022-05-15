@@ -1,4 +1,4 @@
-const { MeetBot } = require("./botContructor");
+const { MeetBot } = require("../backend/Bot/botContructor");
 
 class BotAPI {
   static createBot(name, lectio, code, actions) {

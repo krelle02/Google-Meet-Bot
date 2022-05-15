@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //the api request is bugged for some reason
-export default function CollectionCard(props) {
+export default function BotCard(props) {
   const onClickHandler = async () => {
     //navigate to new page with react router
     const reponse = await axios.post("posts/create", {

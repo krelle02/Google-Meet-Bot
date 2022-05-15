@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import BotsList from "./Components/BotsList";
 
-export default function Collections() {
+export default function MyBots() {
   return (
     <div className="relative top-14 left-[13vw] flex h-[92vh] w-[87vw] justify-center ">
       <div className=" h-fit mt-24 w-11/12 rounded-xl bg-gray-200 shadow-xl">

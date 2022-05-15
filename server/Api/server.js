@@ -6,7 +6,7 @@ const postRoutes = require("./posts");
 
 const app = express();
 
-app.use(express.json());
+app.use(bodyParser.json());
 
 app.use("/posts", postRoutes);
 
