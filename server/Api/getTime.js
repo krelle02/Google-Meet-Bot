@@ -6,14 +6,11 @@ const parseDate = (date) => {
   }
 
 const getTime = (date,time) => {
-
-    console.log(date,time)
-    const new_date = parseDate(date)
-    const date_string = new_date + "T" + time + ":00"
-    
-    const curr_date = new Date()
-    date = new Date(date_string)
-    time = date.getTime()-curr_date.getTime()
+    const date_string = date + "T" + time + ":00"
+    console.log(date_string)
+    const curr_time = new Date()
+    time = new Date(date_string)
+    time = time.getTime()-curr_time.getTime()
     return time
   }
 

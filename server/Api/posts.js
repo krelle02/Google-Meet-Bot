@@ -1,34 +1,36 @@
 const express = require("express");
 const BotAPI = require("./BotAPI");
 const PostSchema = require("../Api/models/Post");
-const getTime = require("./getTime")
 const router = express.Router();
+const getTime = require("./getTime")
+const BotAPIController = require("./BotAPIController")
+
+const botAPIController = new BotAPIController()  
 
 router.post("/create", async (req, res) => {
   console.log(req.body);
-  console.log(req.body.code)
-  //it dosent wanna acces the data from request body. 
+
   const name = req.body.name;
   const code = req.body.code;
-  const time = getTime(req.body.date,req.body.time);
+  const time = getTime(req.body.date,req.body.time)
 
-  const actions = {
-    LaunchMeet: { bool: true },
-    GetMeetData: { bool: true },
-    TypeInChat: { bool: false, text: "" },
-  };
-
-  const bot = BotAPI.createBot(name, false, code, actions);
-  const initializedBot = BotAPI.initBot(bot);
-  const Timer = BotAPI.setTimer(time);
   try {
-    console.log("bot has been created");
-    res.send("bot has beenn created");
-    await BotAPI.runBot(initializedBot, Timer);
+    const botApi = new BotAPI(name,code,time)
+    const id = botAPIController.addBotAPI(botApi)
+    console.log(botAPIController.get_api_list())
+    console.log(`bot has been created with id of ${id}`);
+    res.json({id:id});
+
   } catch (error) {
-    res.send("The bot found an error");
+    res.send("there was an error");
     throw new Error(error.message);
   }
 });
+
+router.post("/run", async (req,res) => {
+  const id = req.body.id
+  const botApi = botAPIController.getBotAPI(id)
+  botApi.run_bot()
+})
 
 module.exports = router;

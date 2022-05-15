@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import createBot from "../api/create";
+import createBot from "../api/createBot";
 
 const Form = (props) => {
   const titleInputRef = useRef(null);
@@ -24,7 +24,8 @@ const Form = (props) => {
     }
   }, [image]);
 
-  const addBotHandler = (e) => {
+
+  const addBotHandler = async (e) => {
     e.preventDefault();
 
     const data = {
@@ -32,19 +33,18 @@ const Form = (props) => {
       code: codeInputRef.current.value.trim(),
       date: dateInputRef.current.value.trim() ,
       time: timeInputRef.current.value.trim(),
-      }
-    console.log(data)
+    }
+    data.id = await createBot(data)
+
     props.setBotCards([
       ...props.BotCards,
       {
         title: data.name,
         img: preview,
-        id: uuidv4(),
+        id: data.id,
       },
     ]);
-    props.setFormState(!props.formState);
-    createBot(data)
-  
+    props.setFormState(!props.formState);  
   };
 
   const uploadFileHandler = (e) => {

@@ -1,17 +1,10 @@
-import axios from "axios";
+
+import runBot from "../api/runBot";
 
 //the api request is bugged for some reason
 export default function BotCard(props) {
   const onClickHandler = async () => {
-    //navigate to new page with react router
-    const reponse = await axios.post("posts/create", {
-      body: JSON.stringify({
-        name: props.title,
-        code: "gie-nfqq-jnv",
-        time: 5000,
-      }),
-    });
-    window.alert(`Your bot has been created with: ${reponse}`);
+    runBot(props.id)
   };
 
   return (

@@ -10,14 +10,9 @@ function MeetBot(botName, lectio, code) {
   const actions = {
     LaunchMeet: { bool: false },
     GetMeetData: { bool: false },
-    TypeInChat: { bool: false, text: "" },
-    //setter for the actions to be modified
-    set setActions(value) {
-      this.actions = value;
-    },
-  };
-  this.name = botName;
-
+    TypeInChat: { bool: false, text: "" }
+    };
+  this.name = botName; 
   this.getCode = () => {
     return lectio ? getMeetLink() : code;
   };
