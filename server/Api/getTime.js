@@ -1,10 +1,5 @@
 
 
-const parseDate = (date) => {
-    return date
-    return date.replace(/-/g,"/");
-  }
-
 const getTime = (date,time) => {
     const date_string = date + "T" + time + ":00"
     console.log(date_string)

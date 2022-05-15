@@ -5,7 +5,6 @@ class BotAPIController {
     get_api_list() {
         return this.API_list
     }
-
     addBotAPI(botAPI) {
         this.API_list.push(botAPI)
         //this is gonna be the id

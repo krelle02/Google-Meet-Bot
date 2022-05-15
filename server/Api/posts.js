@@ -30,7 +30,12 @@ router.post("/create", async (req, res) => {
 router.post("/run", async (req,res) => {
   const id = req.body.id
   const botApi = botAPIController.getBotAPI(id)
-  botApi.run_bot()
+  try {
+    res.send("Bot is waiting")
+    botApi.run_bot() 
+  } catch (error) {
+    throw new Error(error)
+  }
 })
 
 module.exports = router;
