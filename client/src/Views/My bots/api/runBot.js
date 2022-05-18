@@ -5,6 +5,5 @@ const runBot = async (id) => {
     const reponse = await axios.post("posts/run", { 
           id: id 
       });
-    window.alert("Bot is running")
 }
 export default runBot

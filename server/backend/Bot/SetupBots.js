@@ -73,14 +73,6 @@ addBot(
   })
 );
 
-addBot(
-  createBot("Testbot2", false, "ini-mcxo-buk", {
-    LaunchMeet: { bool: true },
-    GetMeetData: { bool: true },
-    //come back to this method later
-    TypeInChat: { bool: false, text: "" },
-  })
-);
 
 console.log(bots);
 
