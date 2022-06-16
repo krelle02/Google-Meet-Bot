@@ -1,7 +1,7 @@
 
 class BotAPIController {
     API_list = []
-
+    
     get_api_list() {
         return this.API_list
     }

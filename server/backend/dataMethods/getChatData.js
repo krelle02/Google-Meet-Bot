@@ -41,6 +41,7 @@ async function scrapeMeetData(page,meetCode) {
     }, 500);
 };*/
 
+
 const chatObserver = require("./browser/chatObs");
 
 async function getChatData(meetData) {
