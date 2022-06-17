@@ -2,7 +2,7 @@
 
 
 const chatObserver = async (page) => {
-
+    
     //executes javascript inside browser
     await page.evaluate( async () => {
         //creates an mutationObserver that checks for changes in the chat
